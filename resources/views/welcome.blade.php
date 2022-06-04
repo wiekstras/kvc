@@ -13,7 +13,7 @@
   <body>
       
     <div id="app">
-        <welcome/>
+
         <router-link to="/about">about</router-link>
         <router-link to="/privacy">privacy</router-link>
         <hr>
