@@ -9,6 +9,7 @@ import AboutComponent from './components/AboutComponent.vue';
 import PrivacyComponent from './components/PrivacyComponent.vue';
 
 const routes = [
+    { path: '/', component: Welcome},
     { path: '/about', component: AboutComponent},
     { path: '/privacy', component: PrivacyComponent},
 ]
