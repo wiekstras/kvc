@@ -8,7 +8,6 @@
     </div>
   </div>
   <!-- Jumbotron end -->
-  <!-- Over ons start -->
   <div class="container over-ons">
     <div class="row">
       <div class="col-sm-12 col-md-8">
@@ -35,148 +34,24 @@
         </div>
       </div>
       <div class="col">
-        <h1>Headlines</h1>
-        <div class="container" style="border: 1;">
-          <ul>
-            <li v-for="item in headlines" style="list-style: none; margin: inherit;">
-              <div class="row">
-                <div class="col-3">
-                  <img :src="item.image" style="width:100%" />
-                </div>
-                <div class="col">
-                  <div class="row">
-                    {{ item.title }}
-                  </div>
-                  <div class="row">
-                    {{ item.published }}
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <HeadlinesComponent />
       </div>
     </div>
   </div>
-  <!-- Over ons end -->
-  <!-- Onze supporters start -->
-  <div class="container onze-supporters" style="text-align: center;">
-    <h1> Onze supporters</h1>
-    <agile :slidesToShow="4" :centerMode="true" :dots="false">
-      <div class="slide">
-        <img src="https://picsum.photos/id/237/200">
-      </div>
-
-      <div class="slide">
-        <img src="https://picsum.photos/id/231/200">
-      </div>
-
-      <div class="slide">
-        <img src="https://picsum.photos/id/230/200">
-      </div>
-
-      <div class="slide">
-        <img src="https://picsum.photos/id/232/200">
-      </div>
-
-    </agile>
-  </div>
-  <!-- Onze supporters end -->
-  <!-- Ons team start -->
-  <div class="container ons-team" style="text-align: center;">
-    <h1 style="text-align:center"> Ons team</h1>
-    <div class="row">
-      <div class="col-sm-6 col-md-3">
-        <div class="card">
-          <img class="card-img-top" src="https://picsum.photos/id/110/200">
-
-          <h6 class="card-title">
-            Rick Zondervan
-          </h6>
-          <h7> Bestuurslid</h7>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="card">
-          <img class="card-img-top" src="https://picsum.photos/id/120/200">
-          <h6 class="card-title">
-            Richard Span
-          </h6>
-          <h7> Bestuurslid</h7>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="card">
-          <img class="card-img-top" src="https://picsum.photos/id/180/200">
-
-          <h6 class="card-title">
-            Giel van Bussel
-          </h6>
-          <h7> Beste programmeur</h7>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="card">
-          <img class="card-img-top" src="https://picsum.photos/id/154/200">
-
-          <h6 class="card-title">
-            Tim Stokkers
-          </h6>
-          <h7> Hooligan</h7>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Ons team end -->
-
+  <SupporterComponent />
+  <OnsTeamComponent/>
 </template>
 <script>
-import { VueAgile } from 'vue-agile'
-
+import SupporterComponent from './SupporterComponent.vue';
+import HeadlinesComponent from './HeadlinesComponent.vue';
+import OnsTeamComponent from './OnsTeamComponent.vue';
 
 export default {
-  components: {
-    agile: VueAgile
-  },
-  data() {
-    return {
-      headlines: [
-        { image: 'https://picsum.photos/id/145/200', title: 'Cambuur toch nog linkerrijtje!', published: '2016-04-10' },
-        { image: 'https://picsum.photos/id/421/200', title: 'Cambuur mazzel met puntje tegen SCH', published: '2016-04-10' },
-        { image: 'https://picsum.photos/id/123/200', title: 'Cambuur in gevaarzone', published: '2016-04-10' },
-        { image: 'https://picsum.photos/id/512/200', title: 'Donateurs gezocht', published: '2016-04-10' }
-      ]
-    }
-  }
+  components: { SupporterComponent, HeadlinesComponent, OnsTeamComponent }
 }
 </script>
 <style>
 .container {
   margin-bottom: 5%;
-}
-
-.slide img {
-  width: 80%;
-  height: auto;
-}
-
-.agile__nav-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.agile__nav-button--next {
-  right: 0px;
-}
-
-.card-img-top {
-  height: fit-content;
-}
-
-@media screen and (max-width: 800px) {
-  .ons-team .card {
-    margin: 5% 10%;
-  }
 }
 </style>
